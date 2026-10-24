@@ -1,0 +1,31 @@
+# Gradle
+.gradle/
+build/
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Minecraft dev runs
+run/
+runs/
+logs/
+*.log
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+out/
+eclipse/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Built artifacts (publish them via GitHub Releases / Modrinth instead)
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar

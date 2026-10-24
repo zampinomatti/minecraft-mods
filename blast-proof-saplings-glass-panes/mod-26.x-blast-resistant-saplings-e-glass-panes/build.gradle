@@ -1,0 +1,66 @@
+plugins {
+	id "net.fabricmc.fabric-loom" version "1.15-SNAPSHOT"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// Aggiungi qui eventuali repository extra (es. Modrinth maven) se in futuro
+	// aggiungerai altre dipendenze oltre a Fabric API.
+}
+
+loom {
+	// A partire da 26.1 il codice client-only va tenuto separato per evitare
+	// crash quando il mod viene caricato su un server dedicato.
+	splitEnvironmentSourceSets()
+
+	mods {
+		"explosionproof_decor" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// NIENTE riga "mappings" qui: da 26.1 il gioco non è più obfuscato e si
+	// programma direttamente contro i nomi ufficiali Mojang.
+
+	// Da 26.1 si usa "implementation" normale, non più "modImplementation"
+	// (Loom non remappa più nulla).
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+// Da 26.1 il task si chiama semplicemente "jar": non esiste più remapJar
+// perché non c'è nulla da remappare.
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}" }
+	}
+}

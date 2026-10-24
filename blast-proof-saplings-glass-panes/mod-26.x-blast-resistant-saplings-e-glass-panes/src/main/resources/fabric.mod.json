@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "explosionproof_decor",
+  "version": "${version}",
+  "name": "Explosion-Proof Decor",
+  "description": "Rende sapling e glass pane immuni ai danni da esplosione (TNT, Creeper, Wither, End Crystal, ecc.).",
+  "authors": [
+    "Il tuo nome"
+  ],
+  "contact": {},
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.explosionproof.ExplosionProofDecor"
+    ],
+    "client": [
+      "com.example.explosionproof.ExplosionProofDecorClient"
+    ]
+  },
+  "mixins": [
+    "explosionproof_decor.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.5",
+    "fabric-api": "*",
+    "minecraft": "~26.1",
+    "java": ">=25"
+  }
+}

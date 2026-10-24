@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "pack_format": 107,
+    "supported_formats": { "min_inclusive": 95, "max_inclusive": 130 },
+    "description": "§aNo Villager Price Increase\n§7Blocks demand and reputation price hikes"
+  }
+}

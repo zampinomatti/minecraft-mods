@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "no_vp",
+  "version": "${version}",
+
+  "name": "No Villager Price Increase",
+  "description": "Prevents villager prices from increasing due to bad reputation. Preserves discounts from curing zombie villagers.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+
+  "environment": "*",
+
+  "entrypoints": {
+    "main": [
+      "dev.novp.NoVillagerPriceIncrease"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1"
+  }
+}
