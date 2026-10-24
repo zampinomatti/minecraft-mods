@@ -3,7 +3,7 @@
   "id": "explosionproof_decor",
   "version": "${version}",
   "name": "Explosion-Proof Decor",
-  "description": "Rende sapling e glass pane immuni ai danni da esplosione (TNT, Creeper, Wither, End Crystal, ecc.).",
+  "description": "a mod that makes saplings and glass panes immune to explosions",
   "authors": [],
   "contact": {},
   "license": "CC0-1.0",
