@@ -4,9 +4,7 @@
   "version": "${version}",
   "name": "Explosion-Proof Decor",
   "description": "Rende sapling e glass pane immuni ai danni da esplosione (TNT, Creeper, Wither, End Crystal, ecc.).",
-  "authors": [
-    "Il tuo nome"
-  ],
+  "authors": [],
   "contact": {},
   "license": "CC0-1.0",
   "environment": "*",
